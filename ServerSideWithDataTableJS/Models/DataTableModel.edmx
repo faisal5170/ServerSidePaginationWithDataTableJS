@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HeroDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="HeroOrderID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AmountPaidCurrencyID" Type="int" />
+          <Property Name="AmountPaidValue" Type="float" />
+          <Property Name="Email" Type="nvarchar" MaxLength="320" />
+          <Property Name="Status" Type="int" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="100" />
+          <Property Name="AddressID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Street1" Type="nvarchar" MaxLength="120" />
+          <Property Name="Street2" Type="nvarchar" MaxLength="120" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="80" />
+          <Property Name="County" Type="nvarchar" MaxLength="80" />
+          <Property Name="State" Type="nvarchar" MaxLength="80" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="128" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="30" />
+          <Property Name="SalesTaxPercent" Type="real" />
+          <Property Name="ShippingIncludedInTax" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CheckoutStatus" Type="int" />
+          <Property Name="LastTimeModified" Type="datetime" Nullable="false" />
+          <Property Name="PaymentMethodUsed" Type="int" />
+          <Property Name="CompleteStatus" Type="int" />
+          <Property Name="PlatformTransactionID" Type="nvarchar(max)" />
+          <Property Name="TransactionPriceCurrencyID" Type="int" />
+          <Property Name="TransactionPriceValue" Type="float" />
+          <Property Name="BestOfferSale" Type="bit" />
+          <Property Name="ShippingInsuranceCostCurrencyID" Type="int" />
+          <Property Name="ShippingInsuranceCostPriceValue" Type="float" />
+          <Property Name="ShippingService" Type="nvarchar(max)" />
+          <Property Name="ShippingServiceCostCurrencyID" Type="int" />
+          <Property Name="ShippingServiceCostValue" Type="float" />
+          <Property Name="ContainingOrderID" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuantityPurchased" Type="int" />
+          <Property Name="PlatformItemID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemTitle" Type="nvarchar" MaxLength="150" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="AddressName" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityContainer Name="HeroDBModelStoreContainer">
+          <EntitySet Name="Transaction" EntityType="Self.Transaction" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HeroDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HeroDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Transactions" EntityType="HeroDBModel.Transaction" />
+        </EntityContainer>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="HeroOrderID" Type="Guid" Nullable="false" />
+          <Property Name="AmountPaidCurrencyID" Type="Int32" />
+          <Property Name="AmountPaidValue" Type="Double" />
+          <Property Name="Email" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="UserID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AddressID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Street1" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="Street2" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="CityName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="County" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="SalesTaxPercent" Type="Single" />
+          <Property Name="ShippingIncludedInTax" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CheckoutStatus" Type="Int32" />
+          <Property Name="LastTimeModified" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PaymentMethodUsed" Type="Int32" />
+          <Property Name="CompleteStatus" Type="Int32" />
+          <Property Name="PlatformTransactionID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionPriceCurrencyID" Type="Int32" />
+          <Property Name="TransactionPriceValue" Type="Double" />
+          <Property Name="BestOfferSale" Type="Boolean" />
+          <Property Name="ShippingInsuranceCostCurrencyID" Type="Int32" />
+          <Property Name="ShippingInsuranceCostPriceValue" Type="Double" />
+          <Property Name="ShippingService" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingServiceCostCurrencyID" Type="Int32" />
+          <Property Name="ShippingServiceCostValue" Type="Double" />
+          <Property Name="ContainingOrderID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuantityPurchased" Type="Int32" />
+          <Property Name="PlatformItemID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItemTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddressName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HeroDBModelStoreContainer" CdmEntityContainer="HeroDBEntities">
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="HeroDBModel.Transaction">
+              <MappingFragment StoreEntitySet="Transaction">
+                <ScalarProperty Name="AddressName" ColumnName="AddressName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ItemTitle" ColumnName="ItemTitle" />
+                <ScalarProperty Name="PlatformItemID" ColumnName="PlatformItemID" />
+                <ScalarProperty Name="QuantityPurchased" ColumnName="QuantityPurchased" />
+                <ScalarProperty Name="ContainingOrderID" ColumnName="ContainingOrderID" />
+                <ScalarProperty Name="ShippingServiceCostValue" ColumnName="ShippingServiceCostValue" />
+                <ScalarProperty Name="ShippingServiceCostCurrencyID" ColumnName="ShippingServiceCostCurrencyID" />
+                <ScalarProperty Name="ShippingService" ColumnName="ShippingService" />
+                <ScalarProperty Name="ShippingInsuranceCostPriceValue" ColumnName="ShippingInsuranceCostPriceValue" />
+                <ScalarProperty Name="ShippingInsuranceCostCurrencyID" ColumnName="ShippingInsuranceCostCurrencyID" />
+                <ScalarProperty Name="BestOfferSale" ColumnName="BestOfferSale" />
+                <ScalarProperty Name="TransactionPriceValue" ColumnName="TransactionPriceValue" />
+                <ScalarProperty Name="TransactionPriceCurrencyID" ColumnName="TransactionPriceCurrencyID" />
+                <ScalarProperty Name="PlatformTransactionID" ColumnName="PlatformTransactionID" />
+                <ScalarProperty Name="CompleteStatus" ColumnName="CompleteStatus" />
+                <ScalarProperty Name="PaymentMethodUsed" ColumnName="PaymentMethodUsed" />
+                <ScalarProperty Name="LastTimeModified" ColumnName="LastTimeModified" />
+                <ScalarProperty Name="CheckoutStatus" ColumnName="CheckoutStatus" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ShippingIncludedInTax" ColumnName="ShippingIncludedInTax" />
+                <ScalarProperty Name="SalesTaxPercent" ColumnName="SalesTaxPercent" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="Street2" ColumnName="Street2" />
+                <ScalarProperty Name="Street1" ColumnName="Street1" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AmountPaidValue" ColumnName="AmountPaidValue" />
+                <ScalarProperty Name="AmountPaidCurrencyID" ColumnName="AmountPaidCurrencyID" />
+                <ScalarProperty Name="HeroOrderID" ColumnName="HeroOrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
